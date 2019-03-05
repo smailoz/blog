@@ -1,0 +1,59 @@
+
+{% extends 'base.html' %}
+
+{% block title %} Anasayfa - {{ block.super }} {% endblock %}
+
+
+{% block body %}
+{% comment %} 
+    <div class="container-fluid">
+        
+        <div class="row" style="margin-bottom:30px;">
+            <div class="col-md-3 col-sm-6 col-xs-12" style="background-color: red; height:100px">1.sütun</div>
+            <div class="col-md-3 col-sm-6 col-xs-12" style="background-color: blue; height:100px">2.sütun</div>
+            <div class="col-md-3 col-sm-6 col-xs-12" style="background-color: grey; height:100px">3.sütun</div>
+            <div class="col-md-3 col-sm-6 col-xs-12" style="background-color: black; height:100px">4.sütun</div>
+        </div>
+        <div class="row" style="margin-bottom:30px;">
+            <div class="col-md-3 col-sm-6 col-xs-12" style="background-color: red; height:100px">1.sütun</div>
+            <div class="col-md-3 col-sm-6 col-xs-12" style="background-color: blue; height:100px">2.sütun</div>
+            <div class="col-md-3 col-sm-6 col-xs-12" style="background-color: grey; height:100px">3.sütun</div>
+            <div class="col-md-3 col-sm-6 col-xs-12" style="background-color: black; height:100px">4.sütun</div>
+        </div>
+        <div class="row" style="margin-bottom:30px;">
+            <div class="col-md-3 col-sm-6 col-xs-12" style="background-color: red; height:100px">1.sütun</div>
+            <div class="col-md-3 col-sm-6 col-xs-12" style="background-color: blue; height:100px">2.sütun</div>
+            <div class="col-md-3 col-sm-6 col-xs-12" style="background-color: grey; height:100px">3.sütun</div>
+            <div class="col-md-3 col-sm-6 col-xs-12" style="background-color: black; height:100px">4.sütun</div>
+        </div>
+        <div class="row" style="margin-bottom:30px;">
+            <div class="col-md-3 col-sm-6 col-xs-12" style="background-color: red; height:100px">1.sütun</div>
+            <div class="col-md-3 col-sm-6 col-xs-12" style="background-color: blue; height:100px">2.sütun</div>
+            <div class="col-md-3 col-sm-6 col-xs-12" style="background-color: grey; height:100px">3.sütun</div>
+            <div class="col-md-3 col-sm-6 col-xs-12" style="background-color: black; height:100px">4.sütun</div>
+        </div> 
+        <div class="row">
+            <div class="col-md-4 col-sm-6 col-xs-12" style="background-color: red; height:100px">1.sütun</div>
+            <div class="col-md-8 col-sm-6 col-xs-12" style="background-color: blue; height:100px">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12" style="background-color: grey; height:100px">1.sütun</div>
+                    <div class="col-md-6 col-sm-6 col-xs-12" style="background-color: black; height:100px">1.sütun</div>
+                </div></div>
+        </div> 
+    </div>{% endcomment %}
+        <div class="row">
+            <div class="col-md-4" style="background-color: red; height:100px"></div>
+            <div class="col-md-8" style="">
+                <div class="row">
+                    <div class="col-md-2" style="background-color: blue; height:100px"></div>
+                    <div class="col-md-6" style="background-color: grey; height:100px"></div>
+                    <div class="col-md-4" style="background-color: black; height:100px"></div>
+                </div>
+            </div>
+        </div>
+
+    Hoşgeldiniz, {{ request.user.get_full_name}}
+
+    </div>
+
+{% endblock %}
