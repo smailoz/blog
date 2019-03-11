@@ -13,17 +13,20 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+# WEB sayfamız için ilgili url adreslerini tanımlayacağımız yer.
 from django.conf.urls import url, include
 from django.contrib import admin
-from home.views import home_view
+from home.views import home_view         # view' i import ettik. (ders 10)
 from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    url(r'^admin/', admin.site.urls), # Admin panelinin nerede tanımlanacağını belirtir. 
 
-    url(r'^$', home_view, name='home'),
-
+    url(r'^$', home_view, name='home'), # home panelinin nerede tanımlanacağını belirtir. r regular expression, ^ düzenli ifadenin başladığını belirtiyor. 
+                                        # / url lerdeki dizin ifadesini oluşturmak için kullanılıyor ( ders 10)
+                                        # $ düzenli ifadenin bittiği için kullanılır. (ders 10)
+                                        # Bu adres için hangi view' in çaışacağını beliritoy ( ders 10 )
     url(r'^post/', include('post.urls')),
 
     url(r'^accounts/', include('accounts.urls')),

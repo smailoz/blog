@@ -6,6 +6,10 @@ from django.utils.text import slugify
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
 
+# İçinde python fonsiyonları yazacağımız yerdir. Web de herhangi bir sayfayı görüntüleyebilmek için o sayfanın view i olması gerekiyor 
+# ( Ders 10 views ) viewwlere karşılık gelen bir url adresi olması gerekio.
+# request sistemizi ziyaret eden kullanıcıların yaptığı isteği temsil ediyor. Kullanıcı istekleri ile ilgili bilgiler getiriyor. 
+# Http Response metodu bunun için kullanılır
 
 def post_index(request):
     post_list = Post.objects.all()
@@ -83,7 +87,7 @@ def post_create(request):
 
 def post_update(request, slug):
 
-    if not request.user.is_authenticated():
+    if not request.user.is_authenticated:
         return Http404
 
     post = get_object_or_404(Post, slug=slug)

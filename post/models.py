@@ -3,16 +3,17 @@ from django.urls import reverse
 from django.utils.text import slugify
 from ckeditor.fields import RichTextField
 
+# Veritabanı nesneleri oluşturduğumuz ve sorgulama yaptığımız katmandır. 
 
-class Post(models.Model):
-    user = models.ForeignKey('auth.User', verbose_name='Yazar', related_name='posts')
-    title = models.CharField(max_length=120, verbose_name='Başlık')
+class Post(models.Model):  # Model oluşturuyoruz. ( Ders 8 Model ) title, content, publishing_date
+    user = models.ForeignKey('auth.User', on_delete=models.PROTECT,verbose_name='Yazar', related_name='posts')
+    title = models.CharField(max_length=120, verbose_name='Başlık') 
     content = RichTextField(verbose_name='İçerik')
     publishing_date = models.DateTimeField(verbose_name='Yayınlanma Tarihi', auto_now_add=True)
     image = models.ImageField(blank=True, null=True)
     slug = models.SlugField(unique=True, editable=False, max_length=130)
 
-    def __str__(self):
+    def __str__(self): # Post un başlığı neyse onu ekranda gösterecek ( ders 8) 
         return self.title
 
     def get_absolute_url(self):
